@@ -12,9 +12,7 @@ import (
 	"strings"
 	"sync/atomic"
 	"time"
-	"net/http"
-	"io/ioutil"
-	
+	"net/http"	
 )
 
 func Recv(device string, options *Options, flagID uint16, retryChan chan RetryStruct) {
