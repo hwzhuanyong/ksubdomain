@@ -139,7 +139,6 @@ func Recv(device string, options *Options, flagID uint16, retryChan chan RetrySt
 			  
 				res, err := client.Do(req)
 				defer res.Body.Close()
-				_, err := ioutil.ReadAll(res.Body)
 				if isSummary {
 					AsnResults = append(AsnResults, data)
 				}
