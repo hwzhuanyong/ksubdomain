@@ -2,6 +2,7 @@ package core
 
 import (
 	"bufio"
+	"fmt"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
@@ -11,8 +12,6 @@ import (
 	"strings"
 	"sync/atomic"
 	"time"
-	"fmt"
-	"strings"
 	"net/http"
 	"io/ioutil"
 	
