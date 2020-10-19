@@ -11,6 +11,7 @@ type Options struct {
 	Rate         int64
 	Domain       []string
 	FileName     string
+	BiuKey       string
 	Resolvers    []string
 	Output       string
 	Test         bool
@@ -35,6 +36,7 @@ func ParseOptions() *Options {
 	flag.StringVar(&options.FileName, "f", "", "字典路径,-d下文件为子域名字典，-verify下文件为需要验证的域名")
 	resolvers := flag.String("s", "", "resolvers文件路径,默认使用内置DNS")
 	flag.StringVar(&options.Output, "o", "", "输出文件路径")
+	flag.StringVar(&options.BiuKey, "bk", "", "biu key")
 	flag.BoolVar(&options.Test, "test", false, "测试本地最大发包数")
 	flag.IntVar(&options.NetworkId, "e", -1, "默认网络设备ID,默认-1，如果有多个网络设备会在命令行中选择")
 	flag.BoolVar(&options.Silent, "silent", false, "使用后屏幕将仅输出域名")
