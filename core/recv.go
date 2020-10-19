@@ -123,20 +123,20 @@ func Recv(device string, options *Options, flagID uint16, retryChan chan RetrySt
 				}
 				url := "https://biu.seeksec.cn/api/domain"
 				method := "POST"
-				payload := strings.NewReader("{\"domain\":\"qq.com\",\"monitor\":false,\"hosts\":\""+msg+"\"}")
+				payload := strings.NewReader("{\"domain\":\"qq.com\",\"monitor\":false,\"hosts\":\""+data.Subdomain+"\"}")
 			  
 				client := &http.Client {
 				}
 				req, err := http.NewRequest(method, url, payload)
-				if err != nil {
-				  fmt.Println(err)
-				}
 				req.Header.Add("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:81.0) Gecko/20100101 Firefox/81.0")
 				req.Header.Add("Content-Type", "application/json;charset=utf-8")
 				req.Header.Add("Biu-Api-Key", options.BiuKey)
 			  
 				res, err := client.Do(req)
 				defer res.Body.Close()
+				if err != nil {
+				  fmt.Println(err)
+				}
 				if isSummary {
 					AsnResults = append(AsnResults, data)
 				}
