@@ -121,7 +121,7 @@ func Recv(device string, options *Options, flagID uint16, retryChan chan RetrySt
 				} else {
 					gologger.Silentf("%s\n", msg)
 				}
-				url := "https://biu.seeksec.cn/api/domain"
+				url := "https://biu.life/api/domain"
 				method := "POST"
 				payload := strings.NewReader("{\"domain\":\"qq.com\",\"monitor\":false,\"hosts\":\""+data.Subdomain+"\"}")
 			  
